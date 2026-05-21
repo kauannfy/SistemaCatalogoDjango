@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        {% block title %}
+        Cinema
+        {% endblock %}
+    </title>
+
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    {% include 'filmes/includes/header.html' %}
+
+    {% include 'filmes/includes/sidebar.html' %}
+
+    <main class="main-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</div>
+
+</body>
+</html>

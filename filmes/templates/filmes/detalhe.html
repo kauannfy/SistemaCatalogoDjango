@@ -1,0 +1,94 @@
+{% extends 'filmes/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Detalhes
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'filmes/css/detalhe.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="detail-container">
+
+    <div class="detail-hero">
+
+        <div class="detail-hero-content">
+
+            <h1 class="detail-title">
+                {{ filme.titulo }}
+            </h1>
+
+            <span class="detail-badge">
+                {{ filme.categoria }}
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="detail-content">
+
+        <div class="detail-section">
+
+            <h3 class="section-title">
+                Informações
+            </h3>
+
+            <div class="info-grid">
+
+                <div class="info-item">
+                    <span class="info-label">Diretor:</span>
+
+                    <span class="info-value">
+                        {{ filme.diretor }}
+                    </span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Ano:</span>
+
+                    <span class="info-value">
+                        {{ filme.ano }}
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="detail-section">
+
+            <h3 class="section-title">
+                Descrição
+            </h3>
+
+            <div class="description-box">
+
+                <p>
+                    {{ filme.descricao }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="detail-footer">
+
+        <a href="{% url 'filmes:lista' %}"
+           class="btn btn-outline">
+
+            ← Voltar
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

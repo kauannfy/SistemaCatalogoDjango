@@ -1,0 +1,53 @@
+{% extends 'filmes/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'filmes/css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="content-header">
+    <h2 class="page-title">Dashboard</h2>
+
+    <p class="page-subtitle">
+        Bem-vindo ao sistema de catálogo de filmes.
+    </p>
+</div>
+
+<div class="dashboard-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon">🎬</div>
+
+        <div class="stat-info">
+            <h3 class="stat-label">Filmes</h3>
+
+            <p class="stat-value">3</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="actions-section">
+
+    <h3 class="section-title">
+        Ações Rápidas
+    </h3>
+
+    <div class="action-buttons">
+
+        <a href="{% url 'filmes:lista' %}" class="btn btn-primary">
+            Ver Filmes
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

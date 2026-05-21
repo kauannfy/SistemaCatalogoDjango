@@ -1,0 +1,60 @@
+{% extends 'filmes/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Lista de Filmes
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'filmes/css/lista.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2 class="page-title">Lista de Filmes</h2>
+
+<div class="items-container">
+
+    {% for filme in filmes %}
+
+    <div class="item-card">
+
+        <div class="item-content">
+
+            <div class="item-header">
+
+                <h3 class="item-title">
+                    {{ filme.titulo }}
+                </h3>
+
+                <span class="item-badge">
+                    {{ filme.categoria }}
+                </span>
+
+            </div>
+
+            <p class="item-description">
+                {{ filme.descricao }}
+            </p>
+
+        </div>
+
+        <div class="item-actions">
+
+            <a href="{% url 'filmes:detalhe' filme.id %}"
+               class="btn-action btn-view">
+
+                👁️
+
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
